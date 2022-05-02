@@ -1,0 +1,82 @@
+clear screen;
+
+
+DROP TABLE Company CASCADE CONSTRAINTS;
+DROP TABLE Applicants CASCADE CONSTRAINTS;
+DROP TABLE VivaInvitation CASCADE CONSTRAINTS; 
+
+
+--Company TABLE
+CREATE TABLE Company(
+	cid number PRIMARY KEY,
+	cname varchar2(15),
+	address varchar2(15),
+	ctype varchar2(15)
+);
+	
+-- Applicant TABLE
+create table Applicants(
+	aid number PRIMARY KEY,
+	aname varchar2(7),
+	age number,
+	PhoneNo varchar2(11),
+	email varchar2(20),
+	degree varchar2(5),
+	cgpa number
+);	
+
+-- VivaInvitation TABLE
+create table VivaInvitation(
+	cid number,
+	aid number,
+	vdate varchar2(20));
+	
+	
+-- insert data in Company table	
+insert into Company values(1, 'Aarong', 'Dhaka','Household goods');
+insert into Company values(2, 'Agrani Bank', 'Dhaka', 'Banks' );
+insert into Company values(3, 'Akij' ,'Dhaka', 'Textile_Tobacco');
+insert into Company values(4, 'Beximco Pharma', 'Pabna','Pharmaceutical');
+insert into Company values(5, 'Bikroy.com', 'Dhaka', 'Software');
+insert into Company values(6, 'Habib Group', 'Chittagong', 'Accessories');
+insert into Company values(7, 'JamunaOil', 'Chittagong', 'Exploration');
+insert into Company values(8, 'KDS Group', 'Chittagong', 'Clothing');
+insert into Company values(9, 'PRAN-RFL', 'Dhaka', 'Pran Food');
+insert into Company values(10,'Pride Group','Dhaka', 'Clothing');
+
+
+
+--insert data into Applicants table	
+insert into Applicants values(100,'Lokon',25,'01796778344','lokon@gmial.com','BSC',3.4);
+insert into Applicants values(101,'Rabbi',32,'01797785644','rabbi@gmial.com','MSC',3.2);
+insert into Applicants values(102,'Nayem',18,'01896178344','nayem@gmial.com','BSS',3.6);
+insert into Applicants values(104,'Arif',42,'01316778344','arif@gmial.com','HSC',4.5);
+insert into Applicants values(105,'Maruf',25,'01696785314','maruf@gmial.com','SSC',4.7);
+insert into Applicants values(106,'Karni',40,'01796778344','karni@gmial.com','BSc',2.9);
+insert into Applicants values(107,'Rafi',30,'01496778341','rafi@gmial.com','MBA',3.4);
+insert into Applicants values(108,'Asik',50,'01596748342','asik@gmial.com','BSC',3.1);
+insert into Applicants values(109,'Tuhin',38,'01696728243','tuhin@gmial.com','MBA',3.3);
+insert into Applicants values(110,'Pulok',28,'01896775345','pulok@gmial.com','MSC',2.8);
+
+
+--insert data into VivaInvitation table	
+insert into VivaInvitation values(1,100,'16-AUG-2021');
+insert into VivaInvitation values(1,101,'10-OCT-2021');
+insert into VivaInvitation values(1,102,'03-NOV-2021');
+insert into VivaInvitation values(1,109,'05-JULY-2021');
+insert into VivaInvitation values(1,104,'16-APR-2021');
+insert into VivaInvitation values(2,101,'4-APR-2021');
+insert into VivaInvitation values(2,102,'15-JAN-2021');
+insert into VivaInvitation values(3,105,'01-NOV-2021');
+insert into VivaInvitation values(5,106,'19-NOV-2021');
+insert into VivaInvitation values(6,107,'10-JUNE-2021');
+
+
+	
+	
+
+commit;
+
+select * from Company;   
+select * from Applicants;
+select * from VivaInvitation;
